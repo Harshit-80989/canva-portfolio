@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Canva Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>My Canva Portfolio</h1>
+    <p>Aesthetic Edits • Creative Collages • Trendy Designs</p>
+    <div class="contacts">
+      <a href="mailto:harshitgupta4732@email.com">Email Me</a>
+      <a href="https://wa.me/919807280408" target="_blank">WhatsApp Me</a>
+    </div>
+  </header>
+
+  <main class="gallery">
+    <img src="edit1.jpg" alt="Edit 1" onclick="zoomImage(this)">
+    <img src="edit2.jpg" alt="Edit 2" onclick="zoomImage(this)">
+    <img src="edit3.jpg" alt="Edit 3" onclick="zoomImage(this)">
+    <img src="edit4.jpg" alt="Edit 4" onclick="zoomImage(this)">
+    <img src="edit5.jpg" alt="Edit 5" onclick="zoomImage(this)">
+  </main>
+
+  <div id="overlay" onclick="closeZoom()">
+    <img id="zoomed-img" src="" alt="Zoomed Edit">
+  </div>
+
+  <script>
+    function zoomImage(img) {
+      const overlay = document.getElementById('overlay');
+      const zoomed = document.getElementById('zoomed-img');
+      zoomed.src = img.src;
+      overlay.style.display = 'flex';
+    }
+    function closeZoom() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
